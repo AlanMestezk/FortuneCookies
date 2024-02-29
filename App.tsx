@@ -10,8 +10,8 @@ export default function App() {
   const [frases,         setFrases] = useState<string[]>(
 
     [
-      "'O sucesso está na jornada, não apenas no destino'",
-      "Grandes oportunidades surgem quando menos esperamos.'",
+      "O sucesso está na jornada, não apenas no destino",
+      "Grandes oportunidades surgem quando menos esperamos.",
       "Acredite no impossível e torne-o realidade.",
       "A persistência é a chave para alcançar seus sonhos.",
       "Seja corajoso o suficiente para seguir seu coração.",
@@ -26,7 +26,7 @@ export default function App() {
 
     let numberRandom = Math.floor(Math.random() * frases.length)
 
-    setTextoFrase(frases[numberRandom])
+    setTextoFrase('"' + frases[numberRandom] + '"')
   }
 
   return (
@@ -38,7 +38,7 @@ export default function App() {
           source={require('./SRC/assets/CookieClosed copy.png')}
         />
 
-      <Text style={GlobalStyles.textFrase}>" {textoFrase} "</Text>
+      <Text style={GlobalStyles.textFrase}>{textoFrase}</Text>
 
       <TouchableOpacity style={GlobalStyles.button} onPress={handleQuebraBiscoito}>
 
